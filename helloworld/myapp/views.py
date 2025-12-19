@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
-from .models import Student2
+from .models import Student2,Student3
 
 
 # Create your views here.
@@ -70,6 +70,10 @@ from .serializers import StudentSerializer
 
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student1.objects.all()
+    serializer_class = StudentSerializer
+
+class StudentViewSet1(viewsets.ModelViewSet):
+    queryset = Student3.objects.all()
     serializer_class = StudentSerializer
 
 
